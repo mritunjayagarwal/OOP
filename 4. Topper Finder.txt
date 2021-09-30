@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class Student{
+	String name;
+    float percentage;
+    
+    public static void Result(Student[] s){
+    	float maxi = s[0].percentage;
+    	int p = 0;
+    	
+    	for(int i = 0; i<s.length; i++){
+    		if(maxi < s[i].percentage){
+    			maxi = s[i].percentage;
+    			p = i;
+    		}
+    	}
+    	
+    	System.out.println("Topper is" + " " + s[p].name + " " + "with" + " " + s[p].percentage + "%");
+    }
+}
+
+public class hello {
+  public static void main(String[] args) {
+      Student stu[] = new Student[3];
+      for(int i = 0; i < stu.length; i++) {
+          stu[i] = new Student();
+          Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+          System.out.println("Enter Name for student " + (i+1));
+   		  stu[i].name = myObj.nextLine();
+   		  System.out.println("Enter Percentage for student" + (i+1));
+          stu[i].percentage = myObj.nextFloat();
+      }
+      
+      Student.Result(stu);
+   }
+}
