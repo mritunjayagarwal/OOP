@@ -1,0 +1,20 @@
+class counter{
+	static int count;
+    {
+    	count++; //count variable
+    }
+    
+    public static int getNoOfInstances() { //getter method to fetch static count variable
+      return count;
+    }
+}
+
+public class Main {
+  public static void main(String[] args) {
+      counter count1 = new counter(); // object creation
+      counter count2 = new counter();
+      counter count3 = new counter();
+      
+       System.out.println("Total Counter objects : " + counter.getNoOfInstances()); //final value of counter = 3
+  }
+}
